@@ -259,17 +259,11 @@ If 'account' is specified, assign address to that account. || Y/N
 |-
 | <code>lockunspent</code> || &lt;unlock&gt; &lt;'[{"txid":"txid","vout":n},...]'&gt; || Updates list of temporarily unspendable outputs. || Y
 |-
-| <code>move</code> || &lt;fromaccount&gt; &lt;toaccount&gt; &lt;amount&gt; [minconf=1] [comment] || Move from one account in your wallet to another || N
-|-
-| <code>sendfrom</code> || &lt;fromaccount&gt; &lt;toagenoraddress&gt; &lt;amount&gt; [minconf=1] [comment] [comment-to] || &lt;amount&gt; is a real and is rounded to 8 decimal places. Will send the given amount to the given address, ensuring the account has a valid balance using [minconf] confirmations. Returns the transaction ID if successful (not in JSON object). || Y
-|-
 | <code>sendmany</code> || &lt;fromaccount&gt; {address:amount,...} [minconf=1] [comment] || Send multiple times. Amounts are double-precision floating point numbers || Y
 |-
 | <code>sendtoaddress</code> || &lt;agenoraddress&gt; &lt;amount&gt; [comment] [comment-to] || Send an amount to a given address. &lt;amount&gt; is a real and is rounded to 8 decimal places. Returns the transaction ID &lt;txid&gt; if successful. || Y
 |-
 | <code>sendtoaddressix</code> || &lt;agenoraddress&gt; &lt;amount&gt; [comment] [comment-to] || Send an amount to a given address using SwiftX. &lt;amount&gt; is a real and is rounded to 8 decimal places. Returns the transaction ID &lt;txid&gt; if successful. || Y
-|-
-| <code>setaccount</code> || &lt;agenoraddress&gt; &lt;account&gt; || Sets the account associated with the given address. Assigning address that is already assigned to the same account will create a new address associated with that account. || N
 |-
 | <code>setstakesplitthreshold</code> || &lt;value&gt; || This will set the output size of your stakes to never be below the given value. || Y
 |-
@@ -282,35 +276,6 @@ If 'account' is specified, assign address to that account. || Y/N
 | <code>walletpassphrase</code> || &lt;passphrase&gt; &lt;timeout&gt; [anonymizeonly=false] || Stores the wallet decryption key in memory for 'timeout' seconds. || N
 |-
 | <code>walletpassphrasechange</code> || &lt;oldpassphrase&gt; &lt;newpassphrase&gt; || Changes the wallet passphrase from 'oldpassphrase' to 'newpassphrase'. || N
-|-
-!colspan="4" | Zerocoin
-|-
-| <code>exportzerocoins</code> || &lt;include_spent&gt; [denomination] || Exports zerocoin mints that are held by this wallet.dat || Y
-|-
-| <code>getarchivedzerocoin</code> || &nbsp; || Display zerocoins that were archived because they were believed to be orphans. || Y
-|-
-| <code>getspentzerocoinamount</code> || &lt;hexstring&gt; &lt;index&gt; || Returns value of spent zerocoin output designated by transaction hash and input index. || N
-|-
-| <code>getzerocoinbalance</code> || &nbsp; || Returns the balance of all unspent zerocoins in this wallet. || Y
-|-
-| <code>importzerocoins</code> || &lt;importdata&gt; || Import zerocoin mints. Adds raw zerocoin mints to the wallet.dat.
-Note it is recommended to use the json export created from the exportzerocoins RPC call || Y
-|-
-| <code>listmintedzerocoins</code> || &nbsp; || Return an array of zerocoin mints. || Y
-|-
-| <code>listspentzerocoins</code> || &nbsp; || Return an array of spent zerocoins. || Y
-|-
-| <code>listzerocoinamounts</code> || &nbsp; || List the denomination amounts held in this wallet. || Y
-|-
-| <code>mintzerocoin</code> || &lt;amount&gt; || Mint given amount from PIV to zPIV. || Y
-|-
-| <code>reconsiderzerocoins</code> || &nbsp; || Check archived zPiv list to see if any mints were added to the blockchain.. || Y
-|-
-| <code>resetmintzerocoin</code> || [extended_search] || Scan the blockchain for all of the zerocoins that are held in the wallet.dat. Update any meta-data that is incorrect. || Y
-|-
-| <code>resetspentzerocoin</code> || &nbsp; || Scan the blockchain for all of the zerocoins that are held in the wallet.dat. Reset mints that are considered spent that did not make it into the blockchain. || Y
-|-
-| <code>spendzerocoin</code> || &lt;amount&gt; &lt;mintchange&gt; &lt;minimizechange&gt; &lt;seclevel&gt; &lt;address&gt; || Spend zPIV to given address with optional reminting of change. || Y
 |}
 
 ==Error Codes==
